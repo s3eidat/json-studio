@@ -179,6 +179,7 @@ svg.i { width: 18px; height: 18px; flex: none; stroke: currentColor; fill: none;
 .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 @media (max-width: 760px) { .grid-2, .grid-3 { grid-template-columns: minmax(0, 1fr); } }
+.sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .muted { color: var(--text-2); }
 .faint { color: var(--text-3); font-size: 12.5px; }
 .mono { font-family: var(--mono); }
@@ -207,7 +208,7 @@ svg.i { width: 18px; height: 18px; flex: none; stroke: currentColor; fill: none;
 .btn.icon { width: 36px; padding: 0; }
 .btn svg.i { width: 16px; height: 16px; }
 
-label.field { display: grid; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--text-2); }
+.field { display: grid; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--text-2); }
 .input, .textarea, .select, input[type="text"].input, input[type="number"].input {
   width: 100%; min-height: 40px; padding: 9px 12px; border-radius: 10px;
   background: var(--surface-2); border: 1px solid var(--line); color: var(--text); font-size: 14px; font-weight: 450;
