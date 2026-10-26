@@ -1,0 +1,22 @@
+.js-grid { align-items: start; }
+#input { min-height: 380px; }
+#out, #tree { min-height: 380px; max-height: 620px; overflow: auto; }
+#status.ok { color: var(--ok); }
+#status.bad { color: var(--danger); background: var(--danger-soft); border-color: transparent; }
+.err-line { background: var(--danger-soft); color: var(--danger); display: block; }
+
+.tree { white-space: normal; }
+.tree ul { list-style: none; margin: 0; padding-left: 18px; border-left: 1px dashed var(--line-strong); }
+.tree > ul { padding-left: 0; border-left: 0; }
+.tree li { margin: 1px 0; }
+.tree .k { color: var(--accent); cursor: pointer; }
+.tree .k:hover { text-decoration: underline; }
+.tree .tog { display: inline-grid; place-items: center; width: 16px; color: var(--text-3); cursor: pointer; user-select: none; }
+.tree .s { color: #f5c26b; }
+.tree .n { color: #a5b4fc; }
+.tree .b { color: #f0a0d0; }
+.tree .z { color: var(--text-3); }
+.tree .meta { color: var(--text-3); font-size: 12px; }
+[data-theme="light"] .tree .s { color: #a35d00; }
+[data-theme="light"] .tree .n { color: #4338ca; }
+[data-theme="light"] .tree .b { color: #b0127a; }

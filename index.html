@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>JSON Studio — Free JSON Formatter, Validator &amp; Viewer | S3eidat Tools</title>
+<meta name="description" content="Format, validate, minify and explore JSON in your browser. Exact error line and column, collapsible tree, sort keys. Free, private, nothing uploaded.">
+<meta property="og:title" content="JSON Studio — free, private JSON formatter">
+<meta property="og:description" content="Format, validate, minify and explore JSON. Runs 100% in your browser.">
+<meta property="og:image" content="screenshot.png">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+</head>
+<body data-tool="json-studio">
+<main class="s3-main">
+  <section class="s3-hero">
+    <h1>JSON Studio</h1>
+    <p>Format, validate, minify and explore JSON. Paste it, drop a file, or type. It never leaves your browser.</p>
+  </section>
+
+  <div class="grid-2 js-grid">
+    <section class="card">
+      <div class="row between">
+        <h2>Input</h2>
+        <div class="row">
+          <button class="btn ghost small" id="sample">Sample</button>
+          <label class="btn ghost small" id="open">Open file<input type="file" accept=".json,application/json,text/plain" hidden></label>
+          <button class="btn ghost small" id="clear">Clear</button>
+        </div>
+      </div>
+      <textarea class="textarea" id="input" spellcheck="false" placeholder='Paste JSON here, e.g. {"hello": "world"}'></textarea>
+      <div class="row mt">
+        <div class="seg" id="indent" role="group" aria-label="Indent">
+          <button aria-pressed="true" data-v="2">2 spaces</button>
+          <button aria-pressed="false" data-v="4">4 spaces</button>
+          <button aria-pressed="false" data-v="tab">Tab</button>
+        </div>
+        <label class="check"><input type="checkbox" id="sortkeys"> Sort keys</label>
+      </div>
+      <div class="row mt">
+        <button class="btn primary" id="format">Format</button>
+        <button class="btn" id="minify">Minify</button>
+        <span class="grow"></span>
+        <span id="status" class="chip">Waiting for JSON</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="row between">
+        <div class="seg" id="view" role="group" aria-label="View">
+          <button aria-pressed="true" data-v="text">Text</button>
+          <button aria-pressed="false" data-v="tree">Tree</button>
+        </div>
+        <div class="row">
+          <button class="btn small" id="copy"><svg class="i"><use href="#i-copy"/></svg>Copy</button>
+          <button class="btn small" id="save"><svg class="i"><use href="#i-download"/></svg>.json</button>
+        </div>
+      </div>
+      <pre class="out mt" id="out" tabindex="0"></pre>
+      <div class="tree out mt" id="tree" hidden></div>
+      <div class="stats mt" id="stats"></div>
+    </section>
+  </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
